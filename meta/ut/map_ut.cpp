@@ -44,8 +44,6 @@ TEST_CASE("test tsl::meta::map", "[map]")
       , make_pair<my_type>("my_type")
       , make_pair<long>("long"));
    
-   static_assert(std::is_same_v<int, my_map::find("int")>);
-
    static_assert(std::is_same_v<int,      TSL_META_FIND_TYPE(my_map, "int")>);
    static_assert(std::is_same_v<double,   TSL_META_FIND_TYPE(my_map, "double")>);
    static_assert(std::is_same_v<long,     TSL_META_FIND_TYPE(my_map, "long")>);

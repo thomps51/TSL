@@ -305,7 +305,8 @@ namespace tsl { namespace meta {
    constexpr void
    map<Pair>::enumerate(Enumerator & _handler) const
    {
-      static_assert(is_valid_enumerator_v<Enumerator, decltype(current.key), typename Pair::value>);
+      static_assert(
+         details::is_valid_enumerator_v<Enumerator, decltype(current.key), typename Pair::value>);
       _handler.template on_value<typename Pair::value>(current.key);
    }
 
@@ -368,7 +369,8 @@ namespace tsl { namespace meta {
    constexpr void
    map<Pair, Pairs...>::enumerate(Enumerator & _handler) const
    {
-      static_assert(is_valid_enumerator_v<Enumerator, decltype(current.key), typename Pair::value>);
+      static_assert(
+         details::is_valid_enumerator_v<Enumerator, decltype(current.key), typename Pair::value>);
       _handler.template on_value<typename Pair::value>(current.key);
       others.enumerate(_handler);
    }
