@@ -6,5 +6,6 @@ include_directories(/home/athomps/libs/include)
 
 add_executable(tsl_meta_ut
     main.cpp
+    filter_parameter_pack_ut.cpp
     map_ut.cpp
 )
